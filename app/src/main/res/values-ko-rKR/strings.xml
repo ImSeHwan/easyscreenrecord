@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">쉬운 화면녹화</string>
+    <string name="record_list">녹화영상 리스트</string>
+    <string name="settings">설정</string>
+    <string name="use_cam">카메라 사용</string>
+    <string name="use_mic">음성 사용</string>
+    <string name="record_quality">녹화 품질</string>
+    <string name="cam_size">캠 크기 설정</string>
+    <string name="record_quality_low">일반화질</string>
+    <string name="record_quality_general">고화질</string>
+    <string name="service_always_execute">서비스 항상 실행</string>
+    <string name="start_record">녹화 버튼 켜기</string>
+    <string name="stop_record">녹화 버튼 끄기</string>
+    <string name="notice">안내</string>
+    <string name="play">재생</string>
+    <string name="edit">편집</string>
+    <string name="save">저장</string>
+    <string name="megabyte">MB</string>
+    <string name="kilobyte">KB</string>
+    <string name="short_seconds">초</string>
+    <string name="trimming_progress">영상 편집중...</string>
+    <string name="video_saved_at">Video saves at : $%1s</string>
+    <string name="video_delete">파일삭제</string>
+    <string name="video_file_sharing">영상 파일 공유</string>
+    <string name="video_file_sharing_select_app">업로드 할 앱을 선택해 주세요.</string>
+
+    <string name="record_service_info">녹화를 위한 서비스 입니다.</string>
+    <string name="record_service_detail_info">앱 이름을 터치해 보세요. 녹화 시작을 위한 버튼을 생성하거나 제거할 수있습니다.</string>
+    <string name="record_service_information1">알림영역을 확장하면 "녹화버튼설정"을 이용 할 수 있어요.</string>
+    <string name="record_service_information2">화면 녹화를 위한 오버레이 권한 수락을 해주세요.</string>
+    <string name="record_service_information3">오버레이 권한이 거부되어 화면 녹화를 할 수 없습니다.</string>
+    <string name="confirm">확인</string>
+    <string name="cancel">취소</string>
+    <string name="recorded">녹화완료</string>
+    <string name="record">Record</string>
+
+    <string name="info_message1">녹화에 필요한 권한 설정(저장공간, 카메라, 마이크)이 필요합니다. 설정하시겠습니까?</string>
+    <string name="info_message2">최소 재생 시간</string>
+    <string name="info_message3">녹화 파일 저장에 필요한 권한 설정이 필요합니다. 설정하시겠습니까?</string>
+    <string name="info_message4">앱을 실행하려면 저장공간 권한이 필요합니다.</string>
+    <string name="info_message5">정말 파일을 삭제 하시겠습니까?</string>
+    <string name="info_message6">잠시후에 다시 시도해 주세요.</string>
+    <string name="info_message7">이미 녹화중 입니다.</string>
+    <string name="info_message8">화면 녹화를 하시려면 \"RECORD\" 버튼을 눌러주세요.</string>
+    <string name="info_message9">알림</string>
+    <string name="info_message10">모바일 네트워크를 사용하시면 요금이 발생할 수 있습니다. wifi를 사용해 주세요. 그래도 공유를 실행 하시겠습니까?</string>
+    <string name="info_message11">다시 보지 않음</string>
+
+</resources>

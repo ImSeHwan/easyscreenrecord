@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/ns_contents"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/adViewBanner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="#000000"
+        android:layout_width="0dp"
+        android:layout_height="0dp" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/rl_service_always_execute"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_margin="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_service_always_execute_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:gravity="center_vertical"
+                    android:text="@string/service_always_execute"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14dp" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/sc_service_always_execute_swich"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:theme="@style/MyTheme.Switch"
+                    app:switchMinWidth="50dp"
+                    android:checked="true"/>
+                <!--<ImageView
+                    android:id="@+id/iv_service_always_execute_swich"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/com_switchbtn_on"
+                    android:tag="on" />-->
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rl_face_cam_group"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_margin="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_face_cam_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:gravity="center_vertical"
+                    android:text="@string/use_cam"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14dp" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/sc_face_cam_swich"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:theme="@style/MyTheme.Switch"
+                    app:switchMinWidth="50dp"
+                    android:checked="true"/>
+                <!--               <ImageView
+                                   android:id="@+id/iv_face_cam_swich"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:layout_alignParentRight="true"
+                                   android:layout_centerVertical="true"
+                                   android:src="@drawable/com_switchbtn_on"
+                                   android:tag="on" />-->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_voice_rec_group"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_margin="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_voice_rec_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/use_mic"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14dp" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/sc_voice_rec_swich"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:theme="@style/MyTheme.Switch"
+                    app:switchMinWidth="50dp"
+                    android:checked="true"/>
+                <!--<ImageView
+                    android:id="@+id/iv_voice_rec_swich"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/com_switchbtn_on"
+                    android:tag="on" />-->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_rec_detail_setting_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/tv_rec_detail_setting_title"
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/record_quality"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17dp" />
+
+                <RadioGroup
+                    android:id="@+id/rg_rec_quality_selector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:checkedButton="@+id/rb_record_quality_low"
+                    android:orientation="vertical">
+                    <RadioButton
+                        android:id="@+id/rb_record_quality_low"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/record_quality_low"
+                        android:textColor="#ffffff"
+                        android:layout_marginBottom="5dp"
+                        android:theme="@style/RadioButtonStyle"/>
+                    <RadioButton
+                        android:id="@+id/rb_record_quality_general"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/record_quality_general"
+                        android:textColor="#ffffff"
+                        android:theme="@style/RadioButtonStyle"/>/>
+                </RadioGroup>
+                <!--<LinearLayout
+                    android:id="@+id/ll_rec_quality_selector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@+id/tv_rec_detail_setting_title"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/tv_quality_selector_contents"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="@string/record_quality_low"
+                        android:textColor="#008ecb"
+                        android:textSize="14dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_frames_selector_combo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/com_ic_selectmn" />
+                </LinearLayout>-->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_preview_group"
+                android:layout_width="match_parent"
+                android:layout_height="165dp"
+                android:layout_margin="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_preview_contents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cam_size"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17dp" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_alignParentRight="true"
+                    android:orientation="vertical"
+
+                    android:layout_below="@+id/tv_preview_contents"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_preview_image"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="165dp"
+                        android:layout_height="165dp"
+                        >
+
+                        <ImageView
+                            android:id="@+id/iv_preview_image"
+                            android:layout_width="57dp"
+                            android:layout_height="57dp"
+                            android:layout_centerInParent="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/setting_facecam_preview_all" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/rl_preview_image"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintHorizontal_bias="1"
+                        android:layout_marginRight="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/iv_up_size"
+                            android:src="@drawable/selecter_btn_up"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp" />
+
+                        <ImageView
+                            android:id="@+id/iv_down_size"
+                            android:src="@drawable/selecter_btn_down"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp" />
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adViewBanner"
+        ads:layout_constraintTop_toBottomOf="@+id/ns_contents"
+        ads:layout_constraintRight_toRightOf="parent"
+        ads:layout_constraintLeft_toLeftOf="parent"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/ad_unitId_banner"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

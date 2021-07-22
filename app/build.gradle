@@ -1,0 +1,142 @@
+apply plugin: 'com.android.application'
+
+// Creates a variable called keystorePropertiesFile, and initializes it to the
+// keystore.properties file.
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+
+// Initializes a new Properties() object called keystoreProperties.
+def keystoreProperties = new Properties()
+
+// Loads the keystore.properties file into the keystoreProperties object.
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    signingConfigs {
+        config {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+
+    compileSdkVersion 30
+    defaultConfig {
+        applicationId "world.junseo.co.kr.easyscreenrecord"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 8
+        versionName "1.0.8"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        applicationVariants.all { variant ->
+            variant.outputs.each { output ->
+                def project = "easyscreenrecord"
+                def separator = "_"
+                def divider
+                //def buildType = variant.variantData.variantConfiguration.buildType.name
+                def buildType = variant.buildType.name
+
+                def date = new Date();
+                def formattedDate = date.format('yyyyMMdd_HHmm')
+
+                if (buildType == "release")
+                    divider = "real"
+                else if (buildType == "pre")
+                    divider = "pre"
+                else
+                    divider = "dev"
+
+                setProperty("archivesBaseName", project + separator + divider + separator + formattedDate)
+            }
+        }
+
+    }
+
+
+    buildTypes {
+        release {
+            buildConfigField "boolean", "LOG", "false"
+            //resValue "string", "ad_unitId", "ca-app-pub-7096183387874826/2923177740" // 전면 리얼
+            resValue "string", "ad_unitId", "ca-app-pub-7096183387874826/1267842925" // 전면 리얼
+            //resValue "string", "ad_unitId_banner", "ca-app-pub-7096183387874826/5371842143" // 배너 리얼
+            resValue "string", "ad_unitId_banner", "ca-app-pub-7096183387874826/4468721339" // 배너 리얼
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+
+        debug {
+            buildConfigField "boolean", "LOG", "true"
+            resValue "string", "ad_unitId", "ca-app-pub-3940256099942544/1033173712" // 전면광고 테스트 ID
+            resValue "string", "ad_unitId_banner", "ca-app-pub-3940256099942544/6300978111" // 배너 개발
+//            resValue "string", "ad_unitId", "ca-app-pub-7096183387874826/2923177740" // 전면 리얼
+//            resValue "string", "ad_unitId_banner", "ca-app-pub-7096183387874826/5371842143" // 배너 리얼
+            debuggable true
+            signingConfig signingConfigs.config
+        }
+
+        applicationVariants.all { variant ->
+            variant.outputs.each { output ->
+                def project = "easy_screen_record"
+                def separator = "_"
+                def divider
+                def buildType = variant.variantData.variantConfiguration.buildType.name
+
+                def date = new Date();
+                def formattedDate = date.format('yyyyMMdd_HHmm')
+
+                if (buildType == "release")
+                    divider = "real"
+                else
+                    divider = "dev"
+
+                output.outputFileName = project + separator + divider +
+                        separator + formattedDate + ".apk"
+            }
+        }
+    }
+
+/*    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == 'com.android.support') {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion '28.0.0'
+                }
+            }
+        }
+    }*/
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.android.material:material:1.0.0'
+
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+
+    implementation 'com.google.android.material:material:1.0.0'
+
+    // 권한 체크 라이브러리
+    implementation 'gun0912.ted:tedpermission:2.2.2'
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+    implementation "androidx.fragment:fragment-ktx:1.3.5"
+
+    // 로딩 라이브러리
+    implementation 'com.victor:lib:1.0.4'
+
+    implementation 'com.googlecode.mp4parser:isoparser:1.1.21'
+
+    // admob
+    implementation 'com.google.android.gms:play-services-ads:17.2.0'
+
+    implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
+}
