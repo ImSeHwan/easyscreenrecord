@@ -7,7 +7,7 @@
 # === Kotlin 관련 ===
 *.kotlin_metadata
 *.kotlin_module
-
+keystore.properties
 # === Android/Gradle 관련 ===
 .gradle/
 build/
