@@ -1,0 +1,79 @@
+# === Java 관련 ===
+*.class
+*.jar
+*.war
+*.ear
+
+# === Kotlin 관련 ===
+*.kotlin_metadata
+*.kotlin_module
+
+# === Android/Gradle 관련 ===
+.gradle/
+build/
+**/build/
+
+# === IDE 설정 ===
+.idea/
+*.iml
+*.ipr
+*.iws
+*.log
+
+# === OS/에디터 관련 ===
+.DS_Store
+Thumbs.db
+
+# === 환경 파일 ===
+local.properties
+*.keystore
+
+# === APK / AAB / output ===
+*.apk
+*.ap_
+*.aab
+
+# === Proguard / lint ===
+/captures/
+/output.json
+lint/intermediates/
+lint/generated/
+
+# === Crashlytics / Firebase ===
+crashlytics-build.properties
+fabric.properties
+
+# === Jetpack Compose Preview cache ===
+**/composePreview/
+
+# === NDK / CMake ===
+.externalNativeBuild/
+cmake-build-debug/
+cmake-build-release/
+
+# === Emulator ===
+*.hprof
+
+# === Fastlane ===
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# === Gradle Wrapper ===
+!gradle/wrapper/gradle-wrapper.jar
+gradle-wrapper.properties
+
+# === Test 결과 ===
+test-results/
+androidTest-results/
+
+# === 기타 ===
+*.orig
+*.rej
+*.swo
+*.swp
+
+# === 환경별 설정 ===
+.env
+.env.*
